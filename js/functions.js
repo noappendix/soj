@@ -68,9 +68,6 @@ function runScript() {
 				$('#facebook .design').hide();
 			}
 
-	});
-		$("#pt-0").change(function() {
-			console.log("input changed");
 		});
   });
 	$(function() {

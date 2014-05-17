@@ -335,12 +335,13 @@
 										</div>
 									</div>
 
-									<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-									<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.12.0/jquery.validate.min.js"></script>
+									<div id="percent-warning"></div>
 									<script>
 										$(document).ready(function() {
 											$('#percent-warning').hide();
+											var newTotal = 0;
 											$("#pt-0, #pt-1_2, #pt-3_7, #pt-8_14, #pt-15_21, #pt-22_30, #pt-31").change(function() {
+													//capture user inputs
 													var pt0 = isNaN(parseInt($('#pt-0').val())) ? 0 : parseInt($('#pt-0').val());
 													var pt1_2 = isNaN(parseInt($('#pt-1_2').val())) ? 0 : parseInt($('#pt-1_2').val());
 													var pt3_7 = isNaN(parseInt($('#pt-3_7').val())) ? 0 : parseInt($('#pt-3_7').val());
@@ -348,17 +349,37 @@
 													var pt15_21 = isNaN(parseInt($('#pt-15_21').val())) ? 0 : parseInt($('#pt-15_21').val());
 													var pt22_30 = isNaN(parseInt($('#pt-22_30').val())) ? 0 : parseInt($('#pt-22_30').val());
 													var pt31 = isNaN(parseInt($('#pt-31').val())) ? 0 : parseInt($('#pt-31').val());
-													var newTotal = pt0 + pt1_2 + pt3_7 + pt8_14 + pt15_21 + pt22_30 + pt31;
+													newTotal = pt0 + pt1_2 + pt3_7 + pt8_14 + pt15_21 + pt22_30 + pt31;
+
+													//if not equal to 100, show error box
 													if (newTotal !== 100) {
-														console.log("Needs to equal 100% : " + newTotal + " is not 100%");
 														$('#percent-warning').show().html("These fields must add up to 100%. Currently you are at " + newTotal + "%.");
 													} else {
 														$('#percent-warning').hide();
 													}
 											});
+
+											$('form').submit(function(event) {
+												if (newTotal !== 100) {
+													$('#percent-warning').show().html("These fields must add up to 100%. Currently you are at " + newTotal + "%.");
+
+													//if no other errors, then scroll to percent warning box
+													if ($('label.error:visible').length == 0) {
+														$('html, body').animate({
+															scrollTop: $('.num_of_days').offset().top
+    													}, 100);
+														}
+
+													//prevent form from submitting
+													event.preventDefault();
+												} else {
+
+													//submit form
+													return;
+												}
+											});
 										});
 									</script>
-									<div id="percent-warning"></div>
 								</fieldset>
 								<fieldset class="travel_type">
 									<legend>Travel Purpose - Business vs. Leisure Travel (Must add up to 100%)</legend>
