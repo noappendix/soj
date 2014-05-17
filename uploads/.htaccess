@@ -1,0 +1,44 @@
+DirectoryIndex index.php
+
+RewriteEngine On
+
+ErrorDocument 404 http://www.sojern.com/404.php
+Redirect permanent /advertiserterms http://www.sojern.com/terms-and-conditions.php
+Redirect permanent /agencyterms http://www.sojern.com/terms-and-conditions.php
+Redirect permanent /advertisingterms http://www.sojern.com/terms-and-conditions.php
+Redirect permanent /adpolicy http://www.sojern.com/advertising-policy.php
+Redirect permanent /feedback http://www.sojern.com/contact.php
+Redirect permanent /contact_us/general-feedback http://www.sojern.com/contact.php
+Redirect permanent /about http://www.sojern.com
+Redirect permanent /privacy http://www.sojern.com/privacy.php
+Redirect permanent /ad-guidelines.html http://www.sojern.com/ad-guidelines.php
+Redirect permanent /advertisers.html http://www.sojern.com/advertisers.php
+Redirect permanent /advertising-policy.html http://www.sojern.com/advertising-policy.php
+Redirect permanent /audience.html http://www.sojern.com/audience.php
+Redirect permanent /best-practices.html http://www.sojern.com/best-practices.php
+Redirect permanent /careers.html http://www.sojern.com/careers.php
+Redirect permanent /data-partners.html http://www.sojern.com/data-partners.php
+Redirect permanent /index.html http://www.sojern.com/index.php
+Redirect permanent /legal.html http://www.sojern.com/legal.php
+Redirect permanent /our-platform.html http://www.sojern.com/our-platform.php
+Redirect permanent /press.html http://www.sojern.com/press.php
+Redirect permanent /privacy.html http://www.sojern.com/privacy.php
+Redirect permanent /solutions.html http://www.sojern.com/solutions.php
+Redirect permanent /success-stories.html http://www.sojern.com/success-stories.php
+Redirect permanent /team.html http://www.sojern.com/team.php
+Redirect permanent /terms-and-conditions.html http://www.sojern.com/terms-and-conditions.php
+Redirect permanent /tos.html http://www.sojern.com/tos.php
+Redirect permanent /w9 http://www.sojern.com/pdf/Sojern_W9.pdf
+
+Redirect permanent /advertisers-air.php http://www.sojern.com/airline-advertising-solutions.php
+Redirect permanent /advertisers-brand.php http://www.sojern.com/brand-advertising-solutions.php
+Redirect permanent /advertisers-car.php http://www.sojern.com/car-advertising-solutions.php
+Redirect permanent /advertisers-cruise.php http://www.sojern.com/cruise-advertising-solutions.php
+Redirect permanent /advertisers-hotel.php http://www.sojern.com/hotel-advertising-solutions.php
+Redirect permanent /advertisers-tourism.php http://www.sojern.com/tourism-advertising-solutions.php
+Redirect permanent /audience.php http://www.sojern.com/travelers-intent-data-advertising.php
+Redirect permanent /data-partners.php http://www.sojern.com/monetize-travel-data.php
+Redirect permanent /our-platform.php http://www.sojern.com/travel-advertising-platform.php
+Redirect permanent /solutions.php http://www.sojern.com/travel-advertising-solutions.php
+
+Redirect permanent /travel-trends-winter http://www.sojern.com/travel-trends-q4-2013.php
