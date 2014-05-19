@@ -640,7 +640,7 @@ label.error:after {
 	position: relative;
 }
 
-#percent-warning {
+#percent-warning-days-between, #percent-warning-travel-purpose, #percent-warning-nights-stayed {
 	color: #EF1F41;
 	border: 1px solid #F24460;
 	background-color: #FEEBEB;

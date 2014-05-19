@@ -300,7 +300,7 @@
 									</div>
 								</fieldset>
 
-								<fieldset class="num_of_days">
+								<fieldset class="num_of_days" id="num_of_days_between">
 									<legend>Number of Days Between Purchase and Travel (Must add up to 100%)</legend>
 
 									<div>
@@ -335,11 +335,59 @@
 										</div>
 									</div>
 
-									<div id="percent-warning"></div>
-									<script>
+									<div id="percent-warning-days-between"></div>
+
+								</fieldset>
+								<fieldset class="travel_type">
+									<legend>Travel Purpose - Business vs. Leisure Travel (Must add up to 100%)</legend>
+									<div>
+										<label for="textinp">Percentage of Business Travelers</label>
+										<input id="business-percent" type="text" name="perc_bus">&nbsp;%
+									</div>
+									<div>
+										<label for="textinp">Percentage of Leisure Travelers</label>
+										<input id="leisure-percent" type="text" name="perc_lei">&nbsp;%
+									</div>
+
+									<div id="percent-warning-travel-purpose"></div>
+								</fieldset>
+								<fieldset class="num_of_days" id="nights-stayed">
+									<legend>Nights Stayed (Must add up to 100%)</legend>
+									<div>
+										<span>Provide the percentage amount only, do not use numbers.</span>
+										<div>
+											<label for="ls-0_1">0-1 Days</label>
+											<input id="Days1_2" name="ls-0_1" type="text" size="3">&nbsp;%
+										</div>
+										<div>
+											<label for="ls-2_3">2-3 Days</label>
+											<input id="Days2_3" name="ls-2_3" type="text" size="3">&nbsp;%
+										</div>
+										<div>
+											<label for="ls-4_5">4-5 Days</label>
+											<input id="Days4_5" name="ls-4_5" type="text" size="3">&nbsp;%
+										</div>
+										<div>
+											<label for="ls-6_7">6-7 Days</label>
+											<input id="Days6_7" name="ls-6_7" type="text" size="3">&nbsp;%
+										</div>
+										<div>
+											<label for="ls-8">8+ Days</label>
+											<input id="Days8" name="ls-8" type="text" size="3">&nbsp;%
+										</div>
+									</div>
+
+									<div id="percent-warning-nights-stayed"></div>
+								</fieldset>
+								<script>
 										$(document).ready(function() {
-											$('#percent-warning').hide();
-											var newTotal = 0;
+											$('#percent-warning-days-between').hide();
+											$('#percent-warning-travel-purpose').hide();
+											$('#percent-warning-nights-stayed').hide();
+
+											var totalDaysBetween = totalTravelPurpose = totalNightsStayed = 0;
+
+											//total days between
 											$("#pt-0, #pt-1_2, #pt-3_7, #pt-8_14, #pt-15_21, #pt-22_30, #pt-31").change(function() {
 													//capture user inputs
 													var pt0 = isNaN(parseInt($('#pt-0').val())) ? 0 : parseInt($('#pt-0').val());
@@ -349,26 +397,91 @@
 													var pt15_21 = isNaN(parseInt($('#pt-15_21').val())) ? 0 : parseInt($('#pt-15_21').val());
 													var pt22_30 = isNaN(parseInt($('#pt-22_30').val())) ? 0 : parseInt($('#pt-22_30').val());
 													var pt31 = isNaN(parseInt($('#pt-31').val())) ? 0 : parseInt($('#pt-31').val());
-													newTotal = pt0 + pt1_2 + pt3_7 + pt8_14 + pt15_21 + pt22_30 + pt31;
+													totalDaysBetween = pt0 + pt1_2 + pt3_7 + pt8_14 + pt15_21 + pt22_30 + pt31;
 
 													//if not equal to 100, show error box
-													if (newTotal !== 100) {
-														$('#percent-warning').show().html("These fields must add up to 100%. Currently you are at " + newTotal + "%.");
+													if (totalDaysBetween !== 100) {
+														$('#percent-warning-days-between').show().html("These fields must add up to 100%. Currently you are at " + totalDaysBetween + "%.");
 													} else {
-														$('#percent-warning').hide();
+														$('#percent-warning-days-between').hide();
+													}
+											});
+
+											//travel purpose
+											$("#business-percent, #leisure-percent").change(function() {
+													//capture user inputs
+													var businessPercent = isNaN(parseInt($('#business-percent').val())) ? 0 : parseInt($('#business-percent').val());
+													var leisurePercent = isNaN(parseInt($('#leisure-percent').val())) ? 0 : parseInt($('#leisure-percent').val());
+													totalTravelPurpose = businessPercent + leisurePercent;
+
+													//if not equal to 100, show error box
+													if (totalTravelPurpose !== 100) {
+														$('#percent-warning-travel-purpose').show().html("These fields must add up to 100%. Currently you are at " + totalTravelPurpose + "%.");
+													} else {
+														$('#percent-warning-travel-purpose').hide();
+													}
+											});
+
+											//nights stayed
+											$("#Days1_2, #Days2_3, #Days4_5, #Days6_7, #Days8").change(function() {
+													//capture user inputs
+													var Days1_2 = isNaN(parseInt($('#Days1_2').val())) ? 0 : parseInt($('#Days1_2').val());
+													var Days2_3 = isNaN(parseInt($('#Days2_3').val())) ? 0 : parseInt($('#Days2_3').val());
+													var Days4_5 = isNaN(parseInt($('#Days4_5').val())) ? 0 : parseInt($('#Days4_5').val());
+													var Days6_7 = isNaN(parseInt($('#Days6_7').val())) ? 0 : parseInt($('#Days6_7').val());
+													var Days8 = isNaN(parseInt($('#Days8').val())) ? 0 : parseInt($('#Days8').val());
+													totalNightsStayed = Days1_2 + Days2_3 + Days4_5 + Days6_7 + Days8;
+
+													//if not equal to 100, show error box
+													if (totalNightsStayed !== 100) {
+														$('#percent-warning-nights-stayed').show().html("These fields must add up to 100%. Currently you are at " + totalNightsStayed + "%.");
+													} else {
+														$('#percent-warning-nights-stayed').hide();
 													}
 											});
 
 											$('form').submit(function(event) {
-												if (newTotal !== 100) {
-													$('#percent-warning').show().html("These fields must add up to 100%. Currently you are at " + newTotal + "%.");
+												var totalDaysBetweenError = totalDaysBetween !== 100;
+												var totalTravelPurposeError = totalTravelPurpose !== 100;
+												var totalNightsStayedError = totalNightsStayed !== 100;
 
-													//if no other errors, then scroll to percent warning box
-													if ($('label.error:visible').length == 0) {
-														$('html, body').animate({
-															scrollTop: $('.num_of_days').offset().top
-    													}, 100);
-														}
+												//check if any of the percentage inputs are not 100%
+												if (totalDaysBetweenError || totalTravelPurposeError || totalNightsStayedError) {
+
+													//go through them and display error boxes and scroll to them properly
+													if (totalDaysBetweenError) {
+														$('#percent-warning-days-between').show().html("These fields must add up to 100%. Currently you are at " + totalDaysBetween + "%.");
+
+														if ($('label.error:visible').length == 0) {
+															$('html, body').animate({
+																scrollTop: $('#num_of_days_between').offset().top
+	    													}, 100);
+															}
+													}
+
+													if (totalTravelPurposeError) {
+														$('#percent-warning-travel-purpose').show().html("These fields must add up to 100%. Currently you are at " + totalTravelPurpose+ "%.");
+													}
+
+													if (totalNightsStayedError) {
+														$('#percent-warning-nights-stayed').show().html("These fields must add up to 100%. Currently you are at " + totalNightsStayed+ "%.");
+													}
+
+													if (!totalDaysBetweenError && totalTravelPurposeError) {
+														if ($('label.error:visible').length == 0) {
+															$('html, body').animate({
+																scrollTop: $('.travel_type').offset().top
+	    													}, 100);
+															}
+													}
+
+													if (!totalDaysBetweenError && !totalTravelPurposeError && totalNightsStayedError) {
+														if ($('label.error:visible').length == 0) {
+															$('html, body').animate({
+																scrollTop: $('#nights-stayed').offset().top
+	    													}, 100);
+															}
+													}
 
 													//prevent form from submitting
 													event.preventDefault();
@@ -380,44 +493,6 @@
 											});
 										});
 									</script>
-								</fieldset>
-								<fieldset class="travel_type">
-									<legend>Travel Purpose - Business vs. Leisure Travel (Must add up to 100%)</legend>
-									<div>
-										<label for="textinp">Percentage of Business Travelers</label>
-										<input id="textinp" type="text" name="perc_bus">&nbsp;%
-									</div>
-									<div>
-										<label for="textinp">Percentage of Leisure Travelers</label>
-										<input id="textinp" type="text" name="perc_lei">&nbsp;%
-									</div>
-								</fieldset>
-								<fieldset class="num_of_days">
-									<legend>Nights Stayed (Must add up to 100%)</legend>
-									<div>
-										<span>Provide the percentage amount only, do not use numbers.</span>
-										<div>
-											<label for="ls-0_1">0-1 Days</label>
-											<input id="ls-0_1" name="ls-0_1" type="text" size="3">&nbsp;%
-										</div>
-										<div>
-											<label for="ls-2_3">2-3 Days</label>
-											<input id="ls-2_3" name="ls-2_3" type="text" size="3">&nbsp;%
-										</div>
-										<div>
-											<label for="ls-4_5">4-5 Days</label>
-											<input id="ls-4_5" name="ls-4_5" type="text" size="3">&nbsp;%
-										</div>
-										<div>
-											<label for="ls-6_7">6-7 Days</label>
-											<input id="ls-6_7" name="ls-6_7" type="text" size="3">&nbsp;%
-										</div>
-										<div>
-											<label for="ls-8">8+ Days</label>
-											<input id="ls-8" name="ls-8" type="text" size="3">&nbsp;%
-										</div>
-									</div>
-								</fieldset>
 								<div class="section additional">
 									<label for="r_addl_info">Additional Information</label>
 									<div>Provide as much information as possible on what you would like to achieve with this request.</div>
