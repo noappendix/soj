@@ -176,90 +176,99 @@
 									</div>
 								</fieldset>
 
-								<fieldset class="boards other">
+								<fieldset id="boarded-destinations" class="boards other">
 									<legend><label for="r_searched_other">Boarded to/Confirmed Destinations (Top 10 Origination Markets)*</label></legend>
 									<div class="explanation"> <span class="note">Please do not include same destinations
 									<small>(e. g., Newark and New York = New York; Washington Dulles and Washington Reagan = Washington D.C.)</small></span></div>
-									<div>
+									<div class="duplicate-check-margin">
 										<div>
-											<input id="r_boarded" type="text" name="r_boarded[]">
-											<input type="text" name="r_boarded[]">
+											<input id="r_boarded" class="r_boarded1" type="text" name="r_boarded[]">
+											<input class="r_boarded2" type="text" name="r_boarded[]">
 										</div>
 										<div>
-											<input type="text" name="r_boarded[]">
-											<input type="text" name="r_boarded[]">
+											<input class="r_boarded3" type="text" name="r_boarded[]">
+											<input class="r_boarded4" type="text" name="r_boarded[]">
 										</div>
 										<div>
-											<input type="text" name="r_boarded[]">
-											<input type="text" name="r_boarded[]">
+											<input class="r_boarded5" type="text" name="r_boarded[]">
+											<input class="r_boarded6" type="text" name="r_boarded[]">
 										</div>
 										<div>
-											<input type="text" name="r_boarded[]">
-											<input type="text" name="r_boarded[]">
+											<input class="r_boarded7" type="text" name="r_boarded[]">
+											<input class="r_boarded8" type="text" name="r_boarded[]">
 										</div>
 										<div>
-											<input type="text" name="r_boarded[]">
-											<input type="text" name="r_boarded[]">
+											<input class="r_boarded9" type="text" name="r_boarded[]">
+											<input class="r_boarded10" type="text" name="r_boarded[]">
 										</div>
 									</div>
+
 								</fieldset>
-								<fieldset class="boards">
+                <div id="duplicate-warning-boarded" class="arrow-box"></div>
+                <div id="duplicate-boarded-destination"></div>
+								<fieldset id="search-destination"class="boards">
 									<legend>Search Destinations (Top 10 Opportunity Markets)*</legend>
 									<div class="explanation">
 										These markets should NOT overlap or repeat the Boarded to/Confirmed Destinations (Top 10 Origination Markets) section.
 										<span class="note">Please do not include same destinations <small>(e. g., Newark and New York = New York; Washington Dulles and Washington Reagan = Washington D.C.)</small></span>
 									</div>
-									<div>
+									<div class="duplicate-check-margin">
 										<div>
-											<input id="r_searchfrom" type="text" name="r_searchfrom[]">
-											<input type="text" name="r_searchfrom[]">
+											<input id="r_searchfrom" class="dest_1" type="text" name="r_searchfrom[]">
+											<input type="text" class="dest_2" name="r_searchfrom[]">
 										</div>
 										<div>
-											<input type="text" name="r_searchfrom[]">
-											<input type="text" name="r_searchfrom[]">
+											<input type="text" class="dest_3" name="r_searchfrom[]">
+											<input type="text" class="dest_4" name="r_searchfrom[]">
 										</div>
 										<div>
-											<input type="text" name="r_searchfrom[]">
-											<input type="text" name="r_searchfrom[]">
+											<input type="text" class="dest_5" name="r_searchfrom[]">
+											<input type="text" class="dest_6" name="r_searchfrom[]">
 										</div>
 										<div>
-											<input type="text" name="r_searchfrom[]">
-											<input type="text" name="r_searchfrom[]">
+											<input type="text" class="dest_7" name="r_searchfrom[]">
+											<input type="text" class="dest_8" name="r_searchfrom[]">
 										</div>
 										<div>
-											<input type="text" name="r_searchfrom[]">
-											<input type="text" name="r_searchfrom[]">
+											<input type="text" class="dest_9" name="r_searchfrom[]">
+											<input type="text" class="dest_10" name="r_searchfrom[]">
 										</div>
 									</div>
 
 								</fieldset>
-								<fieldset class="boards other">
+
+								<div id="duplicate-search-destination" class="arrow-box"></div>
+
+								<fieldset id="other-search" class="boards other">
 									<legend><label for="r_searched_other">Other Destinations Searched</label></legend>
 									<div class="explanation">Provide 10 additional destinations searched. <span class="note">Please do not include same destinations
 									<small>(e. g., Newark and New York = New York; Washington Dulles and Washington Reagan = Washington D.C.)</small></span></div>
 									<div>
 										<div>
-											<input id="r_searched_other" type="text" name="r_searched_other[]">
-											<input type="text" name="r_searched_other[]">
+											<input id="r_searched_other" class="other_1" type="text" name="r_searched_other[]">
+											<input type="text" class="other_2" name="r_searched_other[]">
 										</div>
 										<div>
-											<input type="text" name="r_searched_other[]">
-											<input type="text" name="r_searched_other[]">
+											<input type="text" class="other_3" name="r_searched_other[]">
+											<input type="text" class="other_4" name="r_searched_other[]">
 										</div>
 										<div>
-											<input type="text" name="r_searched_other[]">
-											<input type="text" name="r_searched_other[]">
+											<input type="text" class="other_5" name="r_searched_other[]">
+											<input type="text" class="other_6" name="r_searched_other[]">
 										</div>
 										<div>
-											<input type="text" name="r_searched_other[]">
-											<input type="text" name="r_searched_other[]">
+											<input type="text" class="other_7" name="r_searched_other[]">
+											<input type="text" class="other_8" name="r_searched_other[]">
 										</div>
 										<div>
-											<input type="text" name="r_searched_other[]">
-											<input type="text" name="r_searched_other[]">
+											<input type="text" class="other_9" name="r_searched_other[]">
+											<input type="text" class="other_10" name="r_searched_other[]">
 										</div>
 									</div>
 								</fieldset>
+
+                <div id="duplicate-other-search" class="arrow-box"></div>
+
 								<fieldset class="searches">
 									<legend>Flight Search Volume*</legend>
 									<div>
@@ -335,7 +344,7 @@
 										</div>
 									</div>
 
-									<div id="percent-warning-days-between"></div>
+									<div id="percent-warning-days-between" class="arrow-box"></div>
 
 								</fieldset>
 								<fieldset class="travel_type">
@@ -349,7 +358,7 @@
 										<input id="leisure-percent" type="text" name="perc_lei">&nbsp;%
 									</div>
 
-									<div id="percent-warning-travel-purpose"></div>
+									<div id="percent-warning-travel-purpose" class="arrow-box"></div>
 								</fieldset>
 								<fieldset class="num_of_days" id="nights-stayed">
 									<legend>Nights Stayed (Must add up to 100%)</legend>
@@ -377,15 +386,135 @@
 										</div>
 									</div>
 
-									<div id="percent-warning-nights-stayed"></div>
+									<div id="percent-warning-nights-stayed" class="arrow-box"></div>
 								</fieldset>
+
 								<script>
+
 										$(document).ready(function() {
 											$('#percent-warning-days-between').hide();
 											$('#percent-warning-travel-purpose').hide();
 											$('#percent-warning-nights-stayed').hide();
+                      $('#duplicate-warning-boarded').hide();
+                      $('#duplicate-boarded-destination').hide();
+                      $('#duplicate-search-destination').hide();
+                      $('#duplicate-other-search').hide();
 
-											var totalDaysBetween = totalTravelPurpose = totalNightsStayed = 0;
+											var totalDaysBetween = totalTravelPurpose = totalNightsStayed = duplicateBoardFlag = duplicateBoardDestFlag = duplicateDestFlag = duplicateOtherFlag = 0;
+
+
+											$("[class^=r_boarded]").change(function() {
+
+                        var flag = 0;
+                        var flag2 = 0;
+
+                        $("[class^=r_boarded]").each(function() {
+                          var $first = $(this);
+
+                          $("[class^=r_boarded]").each(function() {
+                            if ( $first.val().toLowerCase() == $(this).val().toLowerCase() && $(this).attr('class') !== $first.attr('class') && $(this).val() !== "" && $first.val() !== "") {
+                              flag++;
+                            } else {
+                              flag--
+                            }
+                          });
+
+                          $("[class^=dest_]").each(function() {
+                          	if ( $first.val().toLowerCase() == $(this).val().toLowerCase() && $(this).val() !== "" && $first.val() !== "") {
+                              flag2++;
+                          	} else {
+                              flag2--;
+                            }
+                          });
+                        });
+
+                        if (flag !== -100) {
+                        $('#duplicate-warning-boarded').show().html("You have duplicate fields above. Please correct.");
+                        	duplicateBoardFlag = 1;
+                        } else {
+                          $('#duplicate-warning-boarded').hide();
+                          duplicateBoardFlag = 0;
+                        }
+
+                        if (flag2 !== -100) {
+                          $('#duplicate-boarded-destination').show().html("You have duplicate entries in the above and below form areas. Please correct.");
+                          duplicateBoardDestFlag = 1;
+                        } else {
+                          $('#duplicate-boarded-destination').hide();
+                          duplicateBoardDestFlag = 0;
+                        }
+											});
+
+
+                      $("[class^=dest_]").change(function() {
+
+                        var flag = 0;
+                        var flag2 = 0;
+
+                        $("[class^=dest_]").each(function() {
+                          var $first = $(this);
+
+                          $("[class^=dest_]").each(function() {
+                            if ( $first.val().toLowerCase() == $(this).val().toLowerCase() && $(this).attr('class') !== $first.attr('class') && $(this).val() !== "" && $first.val() !== "") {
+                              flag++;
+                            } else {
+                              flag--
+                            }
+                          });
+
+                          $("[class^=r_boarded]").each(function() {
+                            if ( $first.val().toLowerCase() == $(this).val().toLowerCase() && $(this).val() !== "" && $first.val() !== "") {
+                              flag2++;
+                            } else {
+                              flag2--;
+                            }
+                          });
+                        });
+
+                        if (flag !== -100) {
+                        $('#duplicate-search-destination').show().html("You have duplicate fields above. Please correct.");
+                          duplicateDestFlag = 1;
+                        } else {
+                          $('#duplicate-search-destination').hide();
+                          duplicateDestFlag = 0;
+                        }
+
+                        if (flag2 !== -100) {
+                          $('#duplicate-boarded-destination').show().html("You have duplicate entries in the above and below form areas. Please correct.");
+                          duplicateBoardDestFlag = 1;
+                        } else {
+                          $('#duplicate-boarded-destination').hide();
+                          duplicateBoardDestFlag = 0;
+                        }
+                      });
+
+
+                      $("[class^=other_]").change(function() {
+
+                        var flag = 0;
+
+                        $("[class^=other_]").each(function() {
+                          var $first = $(this);
+
+                          $("[class^=other_]").each(function() {
+                            if ( $first.val().toLowerCase() == $(this).val().toLowerCase() && $(this).attr('class') !== $first.attr('class') && $(this).val() !== "" && $first.val() !== "") {
+                              flag++;
+                            } else {
+                              flag--
+                            }
+                          });
+                        });
+
+                        if (flag !== -100) {
+                        $('#duplicate-other-search').show().html("You have duplicate fields above. Please correct.");
+                          duplicateOtherFlag = 1;
+                        } else {
+                          $('#duplicate-other-search').hide();
+                          duplicateOtherFlag = 0;
+                        }
+
+                      });
+
 
 											//total days between
 											$("#pt-0, #pt-1_2, #pt-3_7, #pt-8_14, #pt-15_21, #pt-22_30, #pt-31").change(function() {
@@ -444,19 +573,35 @@
 												var totalDaysBetweenError = totalDaysBetween !== 100;
 												var totalTravelPurposeError = totalTravelPurpose !== 100;
 												var totalNightsStayedError = totalNightsStayed !== 100;
+												var searchVolError = 0;
+
+												if ( $("[id^=r_month]").hasClass('error') || $("[id^=r_sum]").hasClass('error')) {
+													searchVolError = 1;
+												}
 
 												//check if any of the percentage inputs are not 100%
-												if (totalDaysBetweenError || totalTravelPurposeError || totalNightsStayedError) {
+												if (totalDaysBetweenError || totalTravelPurposeError || totalNightsStayedError || duplicateBoardFlag || duplicateBoardDestFlag || duplicateDestFlag || duplicateOtherFlag ) {
 
 													//go through them and display error boxes and scroll to them properly
+
+													if (duplicateBoardFlag) {
+														$('#duplicate-warning-boarded').show().html("You have duplicate fields above. Please correct.");
+													}
+
+                          if (duplicateBoardDestFlag) {
+                            $('#duplicate-boarded-destination').show().html("You have duplicate entries in the above and below form areas. Please correct.");
+                          }
+
+                          if (duplicateDestFlag) {
+                            $('#duplicate-search-destination').show().html("You have duplicate fields above. Please correct.");
+                          }
+
+                          if (duplicateOtherFlag) {
+                            $('#duplicate-other-search').show().html("You have duplicate fields above. Please correct.");
+                          }
+
 													if (totalDaysBetweenError) {
 														$('#percent-warning-days-between').show().html("These fields must add up to 100%. Currently you are at " + totalDaysBetween + "%.");
-
-														if ($('label.error:visible').length == 0) {
-															$('html, body').animate({
-																scrollTop: $('#num_of_days_between').offset().top
-	    													}, 100);
-															}
 													}
 
 													if (totalTravelPurposeError) {
@@ -467,21 +612,52 @@
 														$('#percent-warning-nights-stayed').show().html("These fields must add up to 100%. Currently you are at " + totalNightsStayed+ "%.");
 													}
 
-													if (!totalDaysBetweenError && totalTravelPurposeError) {
-														if ($('label.error:visible').length == 0) {
+													if (!searchVolError && ($('label.error:visible').length == 0) ) {
+
+														if (duplicateBoardFlag) {
 															$('html, body').animate({
-																scrollTop: $('.travel_type').offset().top
+																scrollTop: $('#boarded-destinations').offset().top
 	    													}, 100);
-															}
+														}
+
+                            if (!duplicateBoardFlag && duplicateBoardDestFlag) {
+                              $('html, body').animate({
+                                scrollTop: $('#duplicate-boarded-destination').offset().top
+                                }, 100);
+                            }
+
+                            if (!duplicateBoardFlag && !duplicateBoardDestFlag && duplicateDestFlag ) {
+                              $('html, body').animate({
+                                scrollTop: $('#search-destination').offset().top
+                                }, 100);
+                            }
+
+                            if ( !duplicateBoardFlag && !duplicateBoardDestFlag && !duplicateDestFlag && duplicateOtherFlag ) {
+                              $('html, body').animate({
+                                  scrollTop: $('#other-search').offset().top
+                                  }, 100);
+                            }
+
+														if (!duplicateBoardFlag && !duplicateBoardDestFlag && !duplicateDestFlag && !duplicateOtherFlag && totalDaysBetweenError) {
+																$('html, body').animate({
+																	scrollTop: $('#num_of_days_between').offset().top
+		    													}, 100);
+														}
+
+														if (!duplicateBoardFlag && !duplicateBoardDestFlag && !duplicateDestFlag && !duplicateOtherFlag && !totalDaysBetweenError && totalTravelPurposeError) {
+																$('html, body').animate({
+																	scrollTop: $('.travel_type').offset().top
+		    													}, 100);
+														}
+
+														if (!duplicateBoardFlag && !duplicateBoardDestFlag && !duplicateDestFlag && !duplicateOtherFlag && !totalDaysBetweenError && !totalTravelPurposeError && totalNightsStayedError) {
+																$('html, body').animate({
+																	scrollTop: $('#nights-stayed').offset().top
+		    													}, 100);
+														}
 													}
 
-													if (!totalDaysBetweenError && !totalTravelPurposeError && totalNightsStayedError) {
-														if ($('label.error:visible').length == 0) {
-															$('html, body').animate({
-																scrollTop: $('#nights-stayed').offset().top
-	    													}, 100);
-															}
-													}
+
 
 													//prevent form from submitting
 													event.preventDefault();

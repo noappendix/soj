@@ -640,13 +640,58 @@ label.error:after {
 	position: relative;
 }
 
-#percent-warning-days-between, #percent-warning-travel-purpose, #percent-warning-nights-stayed {
-	color: #EF1F41;
+.arrow-box, #duplicate-boarded-destination {
+	position: relative;
+	background: #FEEBEB;
 	border: 1px solid #F24460;
-	background-color: #FEEBEB;
+	color: #EF1F41;
 	padding: 6px 0;
 	line-height: 1.2;
   margin-top: 20px;
   width: 100%;
 	text-align: center;
+}
+
+.arrow-box:after, .arrow-box:before {
+	bottom: 100%;
+	left: 50%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+}
+
+.arrow-box:after {
+	border-color: rgba(254, 235, 235, 0);
+	border-bottom-color: #FEEBEB;
+	border-width: 10px;
+	margin-left: -10px;
+}
+.arrow-box:before {
+	border-color: rgba(242, 68, 96, 0);
+	border-bottom-color: #F24460;
+	border-width: 11px;
+	margin-left: -11px;
+}
+
+.duplicate-input {
+	border: 1px solid red;
+}
+
+#duplicate-warning-boarded {
+	margin-bottom: 10px;
+}
+
+#duplicate-boarded-destination {
+	margin-bottom: 20px;
+}
+
+#duplicate-search-destination, #duplicate-other-search {
+	margin-bottom: 40px;
+}
+
+.duplicate-check-margin {
+	margin-bottom: 0 !important;
 }
